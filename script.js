@@ -1,21 +1,14 @@
-$(document).ready(function () {
+function semak() {
 
-    $("#loginBtn").click(function () {
+    var user = $("#username").val();
+    var pass = $("#password").val();
 
-        var username = $("#username").val();
-        var password = $("#password").val();
-
-        if (username == "" || password == "") {
-
-            $("#popupLogin").popup("open");
-
-        }
-        else {
-
-            $.mobile.changePage("#infoPage");
-
-        }
-
-    });
-
-});
+    if (user == "" || pass == "") {
+        $("#popupMsg").popup("open");
+        return false;
+    }
+    else {
+        $.mobile.changePage("#page2");
+        return false;
+    }
+}
